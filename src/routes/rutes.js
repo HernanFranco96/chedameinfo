@@ -1,11 +1,15 @@
 const { Router } = require("express");
-const { inicio, insertPerson, getPerson } = require("../controllers/controllers.routes");
+const { inicio, insertPerson, renderForm, insertEvent, getPerson, getEvent } = require("../controllers/controllers.routes");
 
 const router = Router();
 
 router.get('/', inicio);
+router.get('/ingreso', renderForm);
 
-router.get('/ingreso', getPerson)
-router.post('/ingreso', insertPerson)
+router.post('/ingresoPersona', insertPerson);
+router.post('/ingresoEvento', insertEvent);
+
+router.get('/persona/:id', getPerson)
+router.get('/evento/:id', getEvent)
 
 module.exports = router;

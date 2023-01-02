@@ -1,0 +1,8 @@
+<div class="container">
+    {{#each event}}
+        <p>Nombre: {{nombre}}</p>
+        <p>Categoria: {{categoria}}</p>
+        <p>Desde: {{desde}} {{#if hasta}}Hasta: {{hasta}}{{/if}}</p>
+        <p>Descripción: {{text}}</p>
+    {{/each}}
+</div>

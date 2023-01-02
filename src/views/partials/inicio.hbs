@@ -1,14 +1,37 @@
 
 <div class="container mt-5">
-    <h1>Bienvenido al sitio web loco</h1>
+
+    <h4>Ultimos datos ingresados</h4>
     <table>
+        {{#if persons}}
         <tr>
-            <th>Nombres</th>
+            <th>Personajes</th>
         </tr>
-        {{#each element}}
+        {{#each persons}}
         <tr>
-            <td><a href="#">{{nombre}}</a></td>
+            <td><a href="/persona/{{_id}}">{{nombre}} {{apellido}}</a></td>
         </tr>
         {{/each}}
+        {{else}}
+            <div class="alert alert-danger" role="alert">
+                <h5>No hay personas cargadas</h5>
+            </div>
+        {{/if}}
+    </table>
+    <table>
+        {{#if events}}
+        <tr>
+            <th>Eventos</th>
+        </tr>
+        {{#each events}}
+        <tr>
+            <td><a href="/evento/{{_id}}">{{nombre}}</a></td>
+        </tr>
+        {{/each}}
+        {{else}}
+             <div class="alert alert-danger" role="alert">
+                <h5>No hay eventos cargados</h5>
+            </div>
+        {{/if}}
     </table>
 </div>

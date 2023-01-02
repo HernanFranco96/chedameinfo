@@ -1,11 +1,7 @@
 const { Schema, model } = require('mongoose');
 
-const personSchema = new Schema({
+const eventSchema = new Schema({
     nombre: {
-        type: String,
-        required: true
-    },
-    apellido: {
         type: String,
         required: true
     },
@@ -25,5 +21,5 @@ const personSchema = new Schema({
         required: true
     }
 });
-const person = model('person', personSchema)
-module.exports = {person};
+const event = model('event', eventSchema)
+module.exports = {event};

@@ -1,0 +1,83 @@
+
+<div class="row bg-dark bg-gradient text-white">
+    <div class="col">
+        <h3>Ingresar Persona</h3>
+        <form action="/ingresoPersona" method="post">
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="nombre" class="col-form-label">Nombre</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" name="nombre" id="nombre" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="apellido" class="col-form-label">Apellido</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" name="apellido" id="apellido" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="desde" class="col-form-label">Desde</label>
+                </div>
+                <div class="col-auto">
+                    <input type="date" name="desde" id="desde" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="hasta" class="col-form-label">Hasta (opcional)</label>
+                </div>
+                <div class="col-auto">
+                    <input type="date" name="hasta" id="hasta" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-4">
+                <label for="text">Descripción</label>
+                <textarea class="form-control" name="text" id="text"></textarea>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-5">
+                <button type="submit" class="btn btn-success">Registrar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col">
+        <h3>Ingresar Evento</h3>
+        <form action="/ingresoEvento" method="post">
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="nombre" class="col-form-label">Titulo</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" name="nombre" id="nombre" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="desde" class="col-form-label">Desde</label>
+                </div>
+                <div class="col-auto">
+                    <input type="date" name="desde" id="desde" class="form-control" />
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="hasta" class="col-form-label">Hasta (opcional)</label>
+                </div>
+                <div class="col-auto">
+                    <input type="date" name="hasta" id="hasta" class="form-control" /> 
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-4">
+                <label for="text">Descripción</label>
+                <textarea class="form-control" name="text" id="text"></textarea>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-5">
+                <button type="submit" class="btn btn-success fluid">Registrar</button>
+            </div>
+        </form>
+    </div>
+</div>
