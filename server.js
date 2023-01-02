@@ -15,7 +15,7 @@ app.engine('hbs', hbs.engine({
 }));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(router);
 
 const server = app.listen(8080, err => {
