@@ -1,8 +1,24 @@
-<div class="container">
+<style>
+#card{
+    width: auto;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+</style>
+
+<div class="container mt-3">
     {{#each event}}
-        <p>Nombre: {{nombre}}</p>
-        <p>Categoria: {{categoria}}</p>
-        <p>Desde: {{desde}} {{#if hasta}}Hasta: {{hasta}}{{/if}}</p>
-        <p>Descripción: {{text}}</p>
+    <div id="card" class="card mb-3">
+        <div class="card-body">
+            <h2 class="card-title text-center">{{nombre}}</h2>
+            {{#if hasta}}
+                <h6 class="card-title">({{desde}} - {{hasta}})</h6>
+            {{else}}
+                <h6 class="card-title">({{desde}} a presente)</h6>
+            {{/if}}
+            <p class="card-text">{{{text}}}</p>
+        </div>
+    </div>
     {{/each}}
 </div>

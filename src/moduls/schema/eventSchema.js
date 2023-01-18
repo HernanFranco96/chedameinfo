@@ -19,6 +19,10 @@ const eventSchema = new Schema({
     text: {
         type: String,
         required: true
+    },
+    fechaRegistro: {
+        type: String,
+        required: true
     }
 });
 const event = model('event', eventSchema)

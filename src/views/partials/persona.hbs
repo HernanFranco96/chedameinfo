@@ -1,8 +1,28 @@
-<div class="container">
+<style>
+#card{
+    width: auto;
+    margin: auto;
+    background-color: #273746;
+    color: #fff;
+}
+</style>
+
+<div id="editor3" class="container-fluid mt-2">
     {{#each person}}
-        <p>Nombre y apellido: {{nombre}} {{apellido}}</p>
-        <p>Categoria: {{categoria}}</p>
-        <p>Desde: {{desde}} {{#if hasta}}Hasta: {{hasta}}{{/if}}</p>
-        <p>Descripción: {{text}}</p>
+    <div id="card" class="card mb-3 d-flex flex-column align-items-center m">
+        <div class="text-center mt-3">
+            <img src="/{{foto}}" class="card-img-top rounded-circle w-25" alt="{{nombre}}"/>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title text-center">{{nombre}} {{apellido}}</h3>
+            {{#if hasta}}
+                <h6 class="card-title text-center">({{desde}} - {{hasta}})</h6>
+            {{else}}
+                <h6 class="card-title text-center">({{desde}} a presente)</h6>
+            {{/if}}
+            <p class="card-text">{{{text}}}</p>
+            <p class="card-text text-white"><small class="text-muted">{{fechaRegistro}}</small></p>
+        </div>
+    </div>
     {{/each}}
 </div>

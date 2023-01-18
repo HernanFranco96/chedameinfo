@@ -1,37 +1,63 @@
+<style>
+    .container-inicio {
+        width: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #000;
+    }
+    
+    .personas, .eventos {
+        justify-content: center;
+    }
 
-<div class="container mt-5">
+    ul>li {
+        list-style-type: none;
+    }
 
-    <h4>Ultimos datos ingresados</h4>
-    <table>
+    ul>li>a {
+        text-decoration: none;
+        transition: all 0.5s;
+        color: #fff;
+    }
+
+    ul>li>a:hover {
+        border-bottom: 2px solid #000;
+        color: rgb(77, 75, 75);
+    }
+</style>
+
+<div class="container-inicio">
+    <div class="personas">
         {{#if persons}}
-        <tr>
-            <th>Personajes</th>
-        </tr>
+        <h4>Ultimos 5 personas registradas</h4>
         {{#each persons}}
-        <tr>
-            <td><a href="/persona/{{_id}}">{{nombre}} {{apellido}}</a></td>
-        </tr>
+        <ul class="mt-1">
+            <li> <a href="/persona/{{_id}}">{{nombre}} - Posteado:
+                    {{fechaRegistro}} </a></li>
+        </ul>
         {{/each}}
         {{else}}
-            <div class="alert alert-danger" role="alert">
-                <h5>No hay personas cargadas</h5>
-            </div>
+        <div>
+            <h5>No hay personas cargadas</h5>
+        </div>
         {{/if}}
-    </table>
-    <table>
+    </div>
+
+
+    <div class="eventos">
         {{#if events}}
-        <tr>
-            <th>Eventos</th>
-        </tr>
+        <h4>Ultimos 5 eventos registrados</h4>
         {{#each events}}
-        <tr>
-            <td><a href="/evento/{{_id}}">{{nombre}}</a></td>
-        </tr>
+        <ul class="mt-1">
+            <li> <a href="/evento/{{_id}}">{{nombre}} - Posteado:
+                    {{fechaRegistro}} </a></li>
+        </ul>
         {{/each}}
         {{else}}
-             <div class="alert alert-danger" role="alert">
-                <h5>No hay eventos cargados</h5>
-            </div>
+        <div>
+            <h5>No hay eventos cargados</h5>
+        </div>
         {{/if}}
-    </table>
+    </div>
 </div>

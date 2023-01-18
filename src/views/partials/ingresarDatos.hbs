@@ -1,8 +1,8 @@
 
-<div class="row bg-dark bg-gradient text-white">
-    <div class="col">
+<div class="row mt-2 mx-auto">
+    <div style="background: #ABEBC6;" class="col p-5 mx-2">
         <h3>Ingresar Persona</h3>
-        <form action="/ingresoPersona" method="post">
+        <form action="/ingresoPersona" method="post" enctype="multipart/form-data" id="formPerson">
             <div class="row g-3 align-items-center mt-1">
                 <div class="col-auto">
                     <label for="nombre" class="col-form-label">Nombre</label>
@@ -27,7 +27,7 @@
                     <input type="date" name="desde" id="desde" class="form-control" />
                 </div>
             </div>
-            <div class="row g-3 align-items-center mt-1">
+            <div class="row g-3 align-items-center mt-1 mb-2">
                 <div class="col-auto">
                     <label for="hasta" class="col-form-label">Hasta (opcional)</label>
                 </div>
@@ -35,18 +35,26 @@
                     <input type="date" name="hasta" id="hasta" class="form-control" />
                 </div>
             </div>
-            <div class="row g-3 align-items-center mt-4">
-                <label for="text">Descripción</label>
-                <textarea class="form-control" name="text" id="text"></textarea>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-auto">
+                    <label for="myfile" class="col-form-label">Adjunte foto</label>
+                </div>
+                <div class="col-auto">
+                    <input type="file" name="myfile" id="myfile" class="form-control" />
+                </div>
             </div>
-            <div class="d-grid gap-2 col-6 mx-auto mt-5">
+            {{!-- CAJA DE TEXTO --}}
+            <input type="hidden" name="text1" id="text1" class="form-control" />
+            <div class="border border-dark mt-2" name="editor1" id="editor1"></div>
+
+            <div class="d-grid gap-2 col-6 mx-auto mt-2">
                 <button type="submit" class="btn btn-success">Registrar</button>
             </div>
         </form>
     </div>
-    <div class="col">
+    <div style="background: #ABEBC6;" class="col p-5">
         <h3>Ingresar Evento</h3>
-        <form action="/ingresoEvento" method="post">
+        <form action="/ingresoEvento" method="post" id="formEvent">
             <div class="row g-3 align-items-center mt-1">
                 <div class="col-auto">
                     <label for="nombre" class="col-form-label">Titulo</label>
@@ -63,7 +71,7 @@
                     <input type="date" name="desde" id="desde" class="form-control" />
                 </div>
             </div>
-            <div class="row g-3 align-items-center mt-1">
+            <div class="row g-3 align-items-center mt-1 mb-2">
                 <div class="col-auto">
                     <label for="hasta" class="col-form-label">Hasta (opcional)</label>
                 </div>
@@ -71,11 +79,13 @@
                     <input type="date" name="hasta" id="hasta" class="form-control" /> 
                 </div>
             </div>
-            <div class="row g-3 align-items-center mt-4">
-                <label for="text">Descripción</label>
-                <textarea class="form-control" name="text" id="text"></textarea>
+            {{!-- CAJA DE TEXTO --}}
+            <div class="row g-3 align-items-center mt-1 mb-2">
+                <input type="hidden" name="text2" id="text2" class="form-control" />
+                <div class="border border-dark mt-2" name="editor2" id="editor2"></div>
             </div>
-            <div class="d-grid gap-2 col-6 mx-auto mt-5">
+  
+            <div class="d-grid gap-2 col-6 mx-auto mt-2">
                 <button type="submit" class="btn btn-success fluid">Registrar</button>
             </div>
         </form>

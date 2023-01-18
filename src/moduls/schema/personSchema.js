@@ -23,6 +23,13 @@ const personSchema = new Schema({
     text: {
         type: String,
         required: true
+    },
+    fechaRegistro: {
+        type: String,
+        required: true
+    },
+    foto: {
+        type: String
     }
 });
 const person = model('person', personSchema)
